@@ -1,274 +1,310 @@
-:root{
-  --bg: #0c0c0d;
-  --paper: #f7f6f3;
-  --text: #111114;
-  --muted: rgba(17,17,20,0.62);
-  --line: rgba(17,17,20,0.10);
-  --max: 980px;
+:root {
+  /* Luxury Dark Palette */
+  --bg-body: #111111;       /* Todella tumma harmaa/musta */
+  --bg-alt: #1a1a1a;        /* Hieman vaaleampi osioiden erotteluun */
+  --text-main: #eaeaea;     /* Murtunut valkoinen, pehmeämpi silmälle */
+  --text-muted: #888888;    /* Hopeanharmaa */
+  --accent: #ffffff;        /* Puhdas valkoinen korostuksiin */
+  --border: #333333;        /* Hienovaraiset rajat */
+  
+  /* Typography */
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+  
+  /* Spacing - Avain ilmavuuteen */
+  --spacing-section: 8rem;  /* Iso väli osioiden välissä */
+  --spacing-wrap: 5%;
+  --max-width: 1100px;
 }
 
-*{ box-sizing: border-box; }
-html{ scroll-behavior: smooth; }
-body{
-  margin:0;
-  background: var(--paper);
-  color: var(--text);
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+/* --- RESET & BASE --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
-.wrap{
-  max-width: var(--max);
+a { text-decoration: none; color: inherit; transition: opacity 0.3s ease; }
+a:hover { opacity: 0.7; }
+
+/* --- TYPOGRAPHY UTILS --- */
+h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; color: var(--accent); }
+p { color: var(--text-muted); }
+
+.wrap {
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 22px;
+  padding: 0 var(--spacing-wrap);
 }
 
-.header{
-  position: sticky;
-  top:0;
-  z-index: 10;
-  background: rgba(247,246,243,0.92);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--line);
+/* --- HEADER & LOGO (Kuten kuvassa) --- */
+.header {
+  padding: 3rem 0;
+  text-align: center; /* Keskitetään kaikki */
 }
 
-.header-inner{
-  display:flex;
-  align-items: baseline;
-  justify-content: space-between;
-  padding: 16px 0;
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 }
 
-.brand{
-  text-decoration:none;
-  color: var(--text);
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  font-weight: 700;
+/* Logo Styles */
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--accent);
+}
+
+.brand-name {
+  font-family: var(--font-serif);
+  font-size: 3rem; /* Iso koko */
+  line-height: 1;
   letter-spacing: -0.02em;
-  font-size: 20px;
-}
-.brand span{
-  font-weight: 600;
-  color: var(--muted);
-  margin-left: 8px;
-  font-size: 14px;
 }
 
-.nav a{
-  text-decoration:none;
-  color: var(--muted);
-  margin-left: 16px;
-  font-size: 13px;
-  letter-spacing: 0.02em;
-}
-.nav a:hover{ color: var(--text); }
-
-.hero{
-  padding: 72px 0 52px;
-  border-bottom: 1px solid var(--line);
-}
-.hero-inner{ max-width: 78ch; }
-
-.hero-title{
-  margin: 0 0 12px;
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.06;
-  font-size: 44px;
-}
-.hero-sub{
-  margin: 0 0 20px;
-  color: var(--muted);
-  font-size: 16px;
-  line-height: 1.6;
+.brand-sub {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 0.5rem;
+  gap: 1rem;
 }
 
-.hero-cta{
-  display:flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 14px;
+.brand-type {
+  font-family: var(--font-serif); /* Tai Sans, riippuen mausta. Kuvassa Serif. */
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  color: var(--text-main);
 }
 
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding: 11px 14px;
-  border-radius: 10px;
-  border: 1px solid var(--text);
-  background: var(--text);
-  color: var(--paper);
-  text-decoration:none;
-  font-size: 13px;
-}
-.btn:hover{ opacity: 0.92; }
-
-.btn.ghost{
-  background: transparent;
-  color: var(--text);
-  border-color: var(--line);
-}
-.btn.ghost:hover{
-  border-color: rgba(17,17,20,0.22);
+/* Viivat logon tekstin sivuille */
+.brand-sub .line {
+  height: 1px;
+  background-color: var(--text-main);
+  width: 30px; /* Viivan pituus */
+  display: block;
+  opacity: 0.7;
 }
 
-.hero-footnote{
-  margin:0;
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.5;
+/* Navigaatio */
+.nav {
+  display: flex;
+  gap: 2rem;
 }
 
-.section{
-  padding: 46px 0;
-}
-.section.alt{
-  background: #ffffff;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-
-.section-head{
-  display:flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 18px;
-  margin-bottom: 18px;
-}
-.section-head h2{
-  margin:0;
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  font-size: 22px;
-  letter-spacing: -0.01em;
-}
-.section-head p{
-  margin:0;
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
-
-.tile{
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 18px;
-  background: var(--paper);
-}
-.section.alt .tile{ background: #fff; }
-
-.tile h3{
-  margin:0 0 8px;
-  font-size: 14px;
-  letter-spacing: 0.01em;
-}
-.tile p{
-  margin:0;
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.6;
-}
-
-.steps{
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  max-width: 72ch;
-}
-.steps li{
-  display:flex;
-  gap: 14px;
-  padding: 14px 0;
-  border-top: 1px solid var(--line);
-}
-.steps li:first-child{ border-top: 0; }
-.step-k{
-  font-size: 12px;
-  color: var(--muted);
-  letter-spacing: 0.14em;
-}
-.step-t{
-  font-weight: 600;
-  font-size: 14px;
-}
-.step-p{
-  color: var(--muted);
-  font-size: 13px;
-  margin-top: 3px;
-  line-height: 1.6;
-}
-
-.contact{
-  max-width: 60ch;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 10px 14px;
-  background: var(--paper);
-}
-.contact-row{
-  display:flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 10px 0;
-  border-top: 1px solid var(--line);
-}
-.contact-row:first-child{ border-top: 0; }
-.label{
-  font-size: 12px;
-  color: var(--muted);
-  letter-spacing: 0.10em;
+.nav a {
+  font-size: 0.9rem;
   text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  font-weight: 400;
 }
-.value{
-  font-size: 13px;
-  color: var(--text);
-  text-decoration:none;
-}
-.value:hover{ text-decoration: underline; }
+.nav a:hover { color: var(--accent); }
 
-.fine{
-  margin-top: 14px;
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.5;
+/* --- HERO SECTION --- */
+.hero {
+  padding: 6rem 0 8rem 0;
+  text-align: center;
 }
 
-.footer{
-  background: var(--bg);
-  color: #fff;
-  padding: 24px 0;
+.hero-title {
+  font-size: clamp(2rem, 5vw, 3.5rem); /* Responsiivinen iso otsikko */
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
-.footer-inner{
-  display:flex;
+
+.hero-sub {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  font-weight: 300;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: var(--bg-body);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: transparent;
+  color: var(--accent);
+}
+
+.btn.ghost {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text-muted);
+}
+
+.btn.ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.hero-footnote {
+  font-size: 0.8rem;
+  color: #444;
+  margin-top: 2rem;
+}
+
+/* --- SECTIONS GENERAL --- */
+.section {
+  padding: var(--spacing-section) 0;
+}
+
+.alt-bg {
+  background-color: var(--bg-alt);
+}
+
+.section-head {
+  text-align: center;
+  margin-bottom: 5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.overline {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.section-head h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* --- GRID (Services) --- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 4rem; /* Iso väli luo ilmavuutta */
+}
+
+.tile {
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+  transition: transform 0.3s ease;
+}
+.tile:hover { transform: translateY(-5px); border-color: var(--accent); }
+
+.tile h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* --- STEPS (Process) --- */
+.steps {
+  list-style: none;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.steps li {
+  display: flex;
+  gap: 2rem;
+  padding-bottom: 3rem;
+  border-left: 1px solid var(--border); /* Aikajana-viiva */
+  padding-left: 2rem;
+  position: relative;
+}
+
+.steps li:last-child { border-left: none; }
+
+.step-k {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--border); /* Himmeä numero */
+  line-height: 1;
+}
+
+.step-t {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+/* --- CONTACT --- */
+.contact-card {
+  border: 1px solid var(--border);
+  padding: 3rem;
+  max-width: 600px;
+  margin: 0 auto 3rem auto;
+}
+
+.contact-row {
+  display: flex;
   justify-content: space-between;
-  gap: 18px;
+  border-bottom: 1px solid #222;
+  padding: 1rem 0;
 }
-.footer-brand{
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-.footer-meta{
-  color: rgba(255,255,255,0.70);
-  font-size: 12px;
-}
-.footer-right a{
-  color: rgba(255,255,255,0.78);
-  text-decoration:none;
-  margin-left: 14px;
-  font-size: 12px;
-}
-.footer-right a:hover{ color: #fff; }
+.contact-row:last-child { border-bottom: none; }
 
-@media (max-width: 860px){
-  .grid{ grid-template-columns: 1fr; }
-  .section-head{ flex-direction: column; align-items: flex-start; }
-  .hero-title{ font-size: 34px; }
-  .nav{ display:none; }
+.contact-row .label { color: var(--text-muted); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; }
+.contact-row .value { color: var(--accent); font-family: var(--font-serif); font-size: 1.1rem; }
+
+.fine {
+  text-align: center;
+  font-size: 0.8rem;
+  opacity: 0.4;
+}
+
+/* --- FOOTER --- */
+.footer {
+  padding: 4rem 0;
+  border-top: 1px solid var(--border);
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-brand {
+  color: var(--text-main);
+  font-family: var(--font-serif);
+  margin-bottom: 0.5rem;
+}
+
+.footer-right {
+  display: flex;
+  gap: 1.5rem;
 }
