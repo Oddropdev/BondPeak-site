@@ -6,17 +6,24 @@
   <meta name="description" content="BondPeak Advisory – M&A-neuvonanto IT services ja MSP -yrityksille." />
   <title>BondPeak Advisory</title>
 
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
-  <!-- Optional: favicon / monogram (repo root) -->
-  <!-- <link rel="icon" href="bp.png" /> -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
+  
   <header class="header">
     <div class="wrap header-inner">
       <a class="brand" href="./" aria-label="BondPeak Advisory">
-        BondPeak <span>Advisory</span>
+        <span class="brand-name">BondPeak</span>
+        <div class="brand-sub">
+          <span class="line"></span>
+          <span class="brand-type">Advisory</span>
+          <span class="line"></span>
+        </div>
       </a>
 
       <nav class="nav" aria-label="Primary">
@@ -30,15 +37,12 @@
   <main>
     <section class="hero">
       <div class="wrap hero-inner">
-        <!-- If you add logo to repo root, use: src="bondpeak-wordmark.png" -->
-        <!-- <img class="hero-logo" src="bondpeak-wordmark.png" alt="BondPeak Advisory" /> -->
-
-        <h1 class="hero-title">Boutique M&A advisory for IT services &amp; MSP owners.</h1>
+        <h1 class="hero-title">Boutique M&A advisory for <br>IT services &amp; MSP owners.</h1>
         <p class="hero-sub">Discreet process. Qualified buyers. Disciplined execution.</p>
 
         <div class="hero-cta">
           <a class="btn" href="#contact">Request a confidential call</a>
-          <a class="btn ghost" href="BondPeak_IT_MSP_Deal_Readiness_Checklist.docx">Seller readiness checklist</a>
+          <a class="btn ghost" href="seller-readiness.html">Seller readiness checklist</a>
         </div>
 
         <p class="hero-footnote">
@@ -50,6 +54,7 @@
     <section id="services" class="section">
       <div class="wrap">
         <div class="section-head">
+          <span class="overline">Expertise</span>
           <h2>Services</h2>
           <p>Small surface area. High control. End-to-end execution.</p>
         </div>
@@ -73,9 +78,10 @@
       </div>
     </section>
 
-    <section id="process" class="section alt">
+    <section id="process" class="section alt-bg">
       <div class="wrap">
         <div class="section-head">
+          <span class="overline">Methodology</span>
           <h2>Process</h2>
           <p>Structured. Quiet. Buyer-grade materials.</p>
         </div>
@@ -83,22 +89,22 @@
         <ol class="steps">
           <li>
             <span class="step-k">01</span>
-            <div>
+            <div class="step-content">
               <div class="step-t">Confidential fit</div>
               <div class="step-p">Scope, objectives, timeline.</div>
             </div>
           </li>
           <li>
             <span class="step-k">02</span>
-            <div>
+            <div class="step-content">
               <div class="step-t">Preparation</div>
               <div class="step-p">Teaser, NDA, dataroom baseline.</div>
             </div>
           </li>
           <li>
             <span class="step-k">03</span>
-            <div>
-              <div class="step-t">Competitive buyer process</div>
+            <div class="step-content">
+              <div class="step-t">Execution</div>
               <div class="step-p">IOI/LOI, diligence coordination, closing support.</div>
             </div>
           </li>
@@ -107,13 +113,14 @@
     </section>
 
     <section id="contact" class="section">
-      <div class="wrap">
+      <div class="wrap contact-wrap">
         <div class="section-head">
+          <span class="overline">Inquiries</span>
           <h2>Contact</h2>
           <p>Send a short note: segment, size, and timeline.</p>
         </div>
 
-        <div class="contact">
+        <div class="contact-card">
           <div class="contact-row">
             <div class="label">Email</div>
             <a class="value" href="mailto:hello@bondpeak.com">hello@bondpeak.com</a>
@@ -139,7 +146,7 @@
     <div class="wrap footer-inner">
       <div class="footer-left">
         <div class="footer-brand">BondPeak Advisory</div>
-        <div class="footer-meta">Official details: <span>Business ID added later</span></div>
+        <div class="footer-meta">© 2024 BondPeak. All rights reserved.</div>
       </div>
 
       <div class="footer-right">
